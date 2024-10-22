@@ -1,1 +1,377 @@
-<p>You are being watched.</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="js/jquery.min.js"></script>
+		 <!-- Custom Theme files -->
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	</head>
+	<body>
+		<!----- container ----->
+			<!----- banner ----->
+			<div id="home" class="banner">
+				<div class="container">
+				<!----- top-header ----->
+				<div class="top-header">
+					<!----- logo ----->
+					<div class="logo">
+						<a href="#"><img src="images/logo.png" title="uno" /></a>
+					</div>
+					<!----- logo ----->
+					<!----- nav ----->
+					 <!----start-dropdown--->
+				         <script type="text/javascript">
+							var $ = jQuery.noConflict();
+								$(function() {
+									$('#activator').click(function(){
+										$('#box').animate({'top':'0px'},500);
+									});
+									$('#boxclose').click(function(){
+									$('#box').animate({'top':'-700px'},500);
+									});
+								});
+								$(document).ready(function(){
+								//Hide (Collapse) the toggle containers on load
+								$(".toggle_container").hide(); 
+								//Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+								$(".trigger").click(function(){
+									$(this).toggleClass("active").next().slideToggle("slow");
+										return false; //Prevent the browser jump to the link anchor
+								});
+													
+							});
+						</script>
+				        <!----//End-dropdown--->
+					<div class="top-nav">
+						<a id="activator" href="#"><span class="nav-icon"> </span></a>
+						<div class="box" id="box">
+							 <div class="box_content">        					                         
+								<div class="box_content_center">
+								 	<div class="form_content">
+										<div class="menu_box_list">
+											<ul>
+												<li><a href="#home">主页</a></li>
+												<li><a href="#services">团队介绍</a></li>
+												<li><a href="#about">项目提案</a></li>
+												<li><a href="#port">数据展示</span></a></li>
+												<!-- <li><a href="#test">testmonials</a></li>
+												<li><a href="#contact">Contact</a></li> -->
+												<div class="clear"> </div>
+											</ul>
+										</div>
+										<a class="boxclose" id="boxclose"> <label> </label></a>
+									</div>                                  
+								</div> 	
+							</div> 
+						</div> 
+					</div>
+					<!----- nav ----->
+					<div class="clearfix"> </div>
+				</div>
+				<!----- top-header ----->
+				<!----- banner-info ----->
+				<div class="banner-info text-center">
+					<h1>快乐一家人</h1>
+				</div>
+				<!----- banner-info ----->
+			</div>
+			<a class="mouse-down" href="#services"><span> </span></a>
+		</div>
+		<!----- banner ----->
+		<!----- settings ----->
+		<div id="services" class="settings">
+			<div class="container">
+				<div class="settings-grids">
+					<div class="col-md-4">
+						<div class="settings-grid">
+							<div class="settings-grid-left">
+								<span class="setting-icon1"> </span>
+							</div>
+							<div class="settings-grid-right">
+								<h3>Team Intro</h3>
+								<p>这里是团队介绍</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<!-- <div class="col-md-4">
+						<div class="settings-grid">
+							<div class="settings-grid-left">
+								<span class="setting-icon2"> </span>
+							</div>
+							<div class="settings-grid-right">
+								<h3>sociis natoque magnis.</h3>
+								<p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis natoque vel penatibus magnis montes.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="settings-grid">
+							<div class="settings-grid-left">
+								<span class="setting-icon3"> </span>
+							</div>
+							<div class="settings-grid-right">
+								<h3>sociis natoque magnis.</h3>
+								<p>Consectetuer adipiscing elit nean commodo ligula eget dolor eneanero massa cum sociis natoque vel penatibus magnis montes.</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div> -->
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!----- settings ----->
+		<!----- about ----->
+		<div id="about" class="about">
+			<div class="container">
+				<div class="about-head text-center">
+					<a href="#"><img src="images/about-logo.png" title="uno" /></a>
+					<p>项目提案</p>
+				</div>	
+				<!---- about-time-line ----->
+				<div class="about-time-grids">
+					<span class="time-line"><label> </label></span>
+					<div class="time-line-grid-right">
+						<h4>面对面采访</h4>
+						<p>cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus.</p>
+					</div>
+					<div class="time-line-grid-left">
+						<h4>问卷调查</h4>
+						<p>cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus.</p>
+					</div>
+					<div class="time-line-grid-right1">
+						<h4>数据分析</h4>
+						<p>cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus.</p>
+					</div>
+					<div class="time-line-grid-left1">
+						<h4>解决方案</h4>
+						<p>cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus.</p>
+					</div>
+				</div>
+				<!---- about-time-line ----->
+			</div>
+		</div>
+		<!----- about ----->
+		<!----- portfolio ------>
+		<div id="port" class="portfolio">
+			<div class="container">
+				<div class="portfolio-head text-center">
+					<h2>数据展示 <span>/我们收到的一些数据</span></h2>
+				</div>
+			</div>
+				<!----sreen-gallery-cursual---->
+						<div class="sreen-gallery-cursual">
+							 <!-- requried-jsfiles-for owl -->
+							<link href="css/owl.carousel.css" rel="stylesheet">
+							    <script src="js/owl.carousel.js"></script>
+							        <script>
+							    $(document).ready(function() {
+							      $("#owl-demo").owlCarousel({
+							         items :3,
+							        lazyLoad : true,
+							        autoPlay : true,
+							        navigation : false,
+							        navigationText :  false,
+							        pagination : true,
+							      });
+							    });
+							    </script>
+							 <!-- //requried-jsfiles-for owl -->
+							 <!-- start content_slider -->
+						       <div id="owl-demo" class="owl-carousel">
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic1.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic3.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic3.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div><div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic3.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+					                
+					                <div class="item">
+					                	<div class="item-grid">
+					                		<div class="item-pic">
+					                			<img src="images/port-pic1.jpg" title="dish-name" />
+					                		</div>
+					                		<div class="item-info">
+					                			<h4>Senenatis Vitae Justoctu Felis</h4>
+					                			<span>branding</span>
+					                		</div>
+					                	</div>
+					                </div>
+				              </div>
+						<!--//sreen-gallery-cursual---->
+			</div>
+		</div>
+		<!----- portfolio ------>
+		<!------ testmonials ------>
+		<!-- <div id="test" class="testmonials">
+			<div class="container">
+				<div class="testmonials-head text-center">
+					<h3>Testimonials <span>/  what our happy clients say about us</span></h3>
+				</div>
+				
+				<div class="testmonials-grids text-center">
+					<div class="col-md-4">
+						<div class="testmonials-grid">
+							<span class="bq"> </span>
+							<h4>Alex doe</h4>
+							<p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis  Proin a vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing accumsan Sed erat elit, facilisis at nisi quistum.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="testmonials-grid">
+							<span class="bq"> </span>
+							<h4>Samantha doe</h4>
+							<p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis  Proin a vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing accumsan Sed erat elit, facilisis at nisi quistum.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="testmonials-grid">
+							<span class="bq"> </span>
+							<h4>Olivia doe</h4>
+							<p>Mauris sollicitudin velit nisl, sed mollis lorem commodo non. Aenean in mattis  Proin a vehicula eros Etiam malesuada odio nec tempor sollicitudin Integer convallis adipiscing accumsan Sed erat elit, facilisis at nisi quistum.</p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div> -->
+				<!----- testmonials-grids ----->
+			</div>
+		</div>
+		<!------ testmonials ------>
+		<!------ contact ----->
+		<!-- <div id="contact" class="contact">
+			<div class="container">
+				<div class="contact-info text-center">
+					<span class="mail"> </span>
+					<h2>Ready to talk business?</h2>
+					<span> </span>
+					<a href="mailto:contact@uno.com">contact@uno.com</a>
+					<h4>+123 457 896</h4>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"> </div> -->
+		<!------ contact ----->
+		<!------ footer ---->
+		<!-- <div class="footer">
+			<div class="container">
+				<div class="footer-left">
+					<p>Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://guantaow.taobao.com/">厚朴网络淘宝店</a><a target="_blank" href="http://www.moobnn.com">网页模板</a></p>
+				</div>
+				<div class="footer-right">
+					<ul>
+						<li><a href="#">facebook</a></li>
+						<li><a href="#">twitter</a></li>
+						<li><a href="#">google+</a></li>
+						<li><a href="#">dribbble</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+		<!------ footer ---->
+		<!----- container ----->
+		<!---smoth-scrlling---->
+							<script type="text/javascript">
+									$(document).ready(function(){
+									$('a[href^="#"]').on('click',function (e) {
+									    e.preventDefault();
+									    var target = this.hash,
+									    $target = $(target);
+									    $('html, body').stop().animate({
+									        'scrollTop': $target.offset().top
+									    }, 1000, 'swing', function () {
+									        window.location.hash = target;
+									    });
+									});
+								});
+							</script>
+		<!---//smoth-scrlling---->
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>
