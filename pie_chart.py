@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+import matplotlib.pyplot as plt
+import numpy as np
 # 定义数据
 data = [
     ["18-24岁", "男", "学生", "经常", "学业", "是", "是", "减少工作量", "是"],

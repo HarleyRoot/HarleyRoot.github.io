@@ -1,0 +1,121 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=bar-negative&code=PYBwLglsB2AEC8sDeAoW7JgDYFMBcya6sYOAHmAQOSDRyoNlKgowaCtioHByg-OaCh-oKYRg_gqCdpoHh9KkQC-AGiJhgwLJBAFUxEgCcIAczU5l1AIZkIAZyoSlewwAVgEaKW2ElGAJ4h8sKgYAWOgCbAA7sJKIqImsLia0N4KROjeOmA6BADaVIB5GoAFSoBVoYAiscZugPOKgIg6gKe6gDrygPOJVAC6IURqqlH2xLgAZpRuAMwApMYxsKpqHu1UACw9oegARsBgUgC21N29SgDGMAnWADI6kzhYBGDKAK44tehkAIL6Bsl9ig5gzq5UAG46WCeBxMHoVaGOV0MtyU9yUjxc1BW8RwamAykcywcZgMABUICsANbRBzETz-Agtd4GU448R9WLxRKwFKAOblALByeSogDcFQAoOozAPN-gA49ap9H6wP5EYmqHA3al3cmwaA6ObPDI5RFgp7USY6ZQK3EJTHUFEzd7q9BYHZ7bE42B4vwHY4khxknE4OYgLwGIFNHEtYArI6i9xaCAir5BCbEOIJZIdMQjMQANhqgfFOKlMuoRTKlSDTghbhVavTZs1WLcOoSWH1YSN-1dDnNlpOufQIGAzsgMGorTApfQ7uUc3itgJR2gK2b0AAFCBVdKDABKSum2AAennsEAK_GAPbVAA6mgDtjQAhboAPt0As8rr0qALjlAHxmgC5PbeAcNNADTmEpxyhwYCOyjgAFpx8pJwA6N4fHAANz3rAfJxnaDpOi6oIOO6nrekKfpGBKtoOCGVJJG-ACMYhvuGuGxt8RA1CIAFAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+   title: {
+    text: '压力情况与期待补偿方式',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {
+    data: ['增加薪资', '减少工作量'],
+    top: '25'
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  yAxis: [
+    {
+      type: 'category',
+      axisTick: {
+        show: false
+      },
+      data: ['从不', '偶尔', '经常']
+    }
+  ],
+  series: [
+    {
+      name: '增加薪资',
+      type: 'bar',
+      stack: 'Total',
+      label: {
+        show: true
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [3,4,6]
+    },
+    {
+      name: '减少工作量',
+      type: 'bar',
+      stack: 'Total',
+      label: {
+        show: true,
+        position: 'left',
+        formatter: function(params) {
+            // 返回数据的相反数作为显示的文本
+            return -params.value;
+        }
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [-1,-3,-3]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

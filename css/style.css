@@ -41,7 +41,38 @@ body a{
 	background-size:cover;
 }
 /*-----*/
+/* 在<style>标签内或者外部CSS文件中添加这些样式 */
 
+/* 定义一个Flex容器 */
+.flex-container {
+    display: flex; /* 使用Flexbox布局 */
+}
+
+/* 每个子元素占据一半的空间 */
+.col-half {
+    flex: 1; /* 灵活伸缩 */
+    margin: 20px; /* 外边距 */
+    padding: 20px; /* 内边距，可选 */
+}
+
+/* 如果需要保持iframe的高度一致，可以设置一个固定的高 */
+.iframe-container, .mycontainer {
+    height: 500px; /* 根据实际需要调整高度 */
+    box-sizing: border-box; /* 保证padding不会影响总宽度 */
+}
+/* 在<style>标签内或者外部CSS文件中添加这些样式 */
+/* 每个子元素占据三分之一的空间 */
+.col-third {
+    flex: 1; /* 灵活伸缩 */
+    margin: 20px; /* 外边距 */
+	padding: 20px; /* 内边距，可选 */
+}
+
+/* 如果需要保持iframe的高度一致，可以设置一个固定的高 */
+.iframe-container {
+    height: 500px; /* 根据实际需要调整高度 */
+    box-sizing: border-box; /* 保证padding不会影响总宽度 */
+}
 #sheetswitch {
 	position:absolute;
 	top:0px;

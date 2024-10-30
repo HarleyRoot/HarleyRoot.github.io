@@ -1,0 +1,114 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=pie-custom&random=8gxtmy8pm9&code=G4QwTgBAJg9gthAvNGBjArnApgOwC4B0A5lngKIA2W2-AQgJ4CSUAFAOSoAW4eAtKjHwgAljixg2ASgDcAWABQoSHHoBhbmDxIIWLjwDOBUcLwtYcADQQc6ChSsBvBRAhhcUceIBcEDiByg-mwWzhDo-lgAIsKa9ABKung-AGYgFBEKAL4yCkoQIAAOBdoOmXLyueAQMAV4woLlCjV1giWhAEYgqADWRGAw6DhQqjAUMGA-bADEybNzwaF1eFQ-TvIuLnhYAB5JvoDRyoDZSoAhboDccoCBkYCm5oAJdgvrG1TJexy4WxIh95s1PgBMAAwfFyZQEQPAwUZ1AqrUKbMDCIgkCa-EzUNihYGhYDCfToNIAWUK0M-EH0nBgAHcUmkIiCXHBRD4ATCIHAQNsfABGJnE0RxfwkIkbDYCMZgAAy8M4eDE-n0PgA2gCIByALrMzLokEROFYOUQeXMtZClw4EDYSYAQVQqF1-ggADF-nA7sbQfQClhJgVhFgXcawCAoMJwpMAKyhgCkfqFNvw3n1bFDfyjVkTybYKtpGygIDwIAVzKFDggoAo6E9EAALFZTebfIA-T0AJXJsCAY4lFktpcs-avWM0VtiANu1ALV6LbbrpcxdL3YgoZr_cmgFPdQA68mOsx3pxWAOzzutsQBm2oAsOTHhYgKoI-nGpmSg1QLRwEBYICs7UkECNE7ceHQYAfIAIm4QLwEDtABXZYOUrrZOurgwBEAAq7oDgGQbhNGDwgO0WAUIKxrjsaFCYdhEpiLhroUKIWAAMp4PQKzvqeMajOMkxgEQnQsEqXFWH8BAAMySGi7YbPhrr6HA4J4JwjIED8MEuFQOBEFJnLchOECKcpnA_L8fynqJGwonANF0RWH6uiKLG-FMqA_HxoZ8Ry6FCqSgYUrQZZIv8akTq5sDkiMoqsexICcTx4UQLxoaCfpMH-MIrL3ohHqTPoqBpL6cU4Alub1DgZAgPoohEJM2GFXUqAAPLoHgzn5NliV5ZEZX0Ckt73o-whQNsb7mf6pA_g-BJSQQAZDPALBvgAVBA3mQXh6qhGq8hlAoCjCMkj7NHlEAAGS7W6HowJt22tIg52-DA7QAFaJFIDH3Co6g8BepCVbUeUsKdOA5Cta3yOSoj-QQgZQGQwCvBK-hbGIYDsG4RUAF6ZSyagaIQCPCMjMhAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+        renderer: 'canvas',
+        useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+option = {
+  backgroundColor: '#ffffff',
+  title: {
+    text: '压力的主要来源',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'item'
+  },
+  visualMap: {
+    show: false,
+    min: 0,
+    max: 10,
+    inRange: {
+      colorLightness: [0, 1]
+    }
+  },
+  series: [
+    {
+      name: 'Access From',
+      type: 'pie',
+      radius: '55%',
+      center: ['50%', '50%'],
+      data: [
+        { value: 4, name: '社交' },
+        { value: 4, name: '家庭' },
+        { value: 5, name: '工作' },
+        { value: 7, name: '学业' }
+      ].sort(function (a, b) {
+        return a.value - b.value;
+      }),
+      roseType: 'radius',
+      label: {
+      },
+      labelLine: {
+        lineStyle: {
+          color: 'rgba(0, 0, 0, 0.3)'
+        },
+        smooth: 0.2,
+        length: 10,
+        length2: 20
+      },
+      itemStyle: {
+        color: '#c23531',
+        shadowBlur: 200,
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+      },
+      animationType: 'scale',
+      animationEasing: 'elasticOut',
+      animationDelay: function (idx) {
+        return Math.random() * 200;
+      }
+    }
+  ]
+};
+
+if (option && typeof option === 'object') {
+  myChart.setOption(option);
+}
+
+window.addEventListener('resize', myChart.resize);
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!--
+	此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=area-stack-gradient&code=PYBwLglsB2AEC8sDeAoWsDGwA2wBOAXLANoDkAxAMwDsAggEwBijpANLBcwAxcAc1bDuWYAhRj1IBdVmliQw2AKZFU6dGEUAPMEVKBYOUAwKoBc9QCH5gVutA0cqBspUCjBoFbFUrIC-M9cByQQK2erwQA5v6KhBwAhpoQAM5sPrDhUQAKwBDQGiGqauoAniDKHBh4wJHRrpmw2KEARorY3mVqlaEYANb-hQCu0AAmAMI4-LrkAGyh1ACcvACsjvVOsXPoLrJKQd11al2hYKFEZIBzcnqCpIBuCoAoOkeA836AHHpSzqVg7tiVwJrr6ABmilvteHkZmZFQgA3RS0SIASQAtqEgioFmp4Ut0G0IF03uVFO8dBxKABSGKZPz-AAW2NIABZ8aV0M8wA9Ibo8QS1FhUqEUgAZKo1IhgPDtRR3WSaWgRSK7WL_NRgHJ5UgYLaKfz4LLMzLPTqbPBZADioS8sHeoWwkUU1I2Wx2JFIAEZeIBAnUAp3KAaDkjnaALT0cn2o70Sbuyj0H3sUiUShOwBQcrdMvDpLIsqKohLMlLsrldEDjQKZgjZHH0Ka_IpxSRJbF0NBQpC5Qc1dLZbpsClFHWC9sWroACrAbbYVuwSKQ9xgYm8_lm8vlZsAZRlSnRmQA7qiR0QuJOkWVIsTgIvp1lIc9aobjabzehQr9QrOsvPkJP0KAmhAZWuAHS8c8s_ohaCKRewIoGDEpeYCRG-bT6sSEAYG-HLNpeOp4KEXQQIoqQABRcOw2GwLhNrsMQD4psRmTAO87ymti2Gkd-uAhKQeD-JUGGTJM7A2kM9DsH6kwAJQ5vUixfiRQllORlGKNiBG0egWD0boTEsTanE8QRsD0DaYwCbR8L1JIfEbl-iiQiAIGREm95ie8wAYO0JakIWaHREZk6bNsuwEdxBFcJI8zmqmsCVtWuhnP2MrphwTZ_v2kTts0XY9sasVDj2o5yOOX7RYoN53oF6DLl0q54a59Tbru-6HjgRBGiaE71JeXy5X8xFPhgL5ZO-n7EfJAxBf-gHAaB4GQWZMFwQheBIShaGYbh80cYRtH5eJFFUWuIllL1DFKRhvE4RxlD8YJQmbmJK1kWtUlEDJYmZNtinMRhNpHQdsA2pM1A6XdsB6WUBmlWUJlmaEFklitNl2Q5TnFidwluZauzeaw3H0H5MYBZOwVytc4UNlFzaxfFiW9ilw7pXyApZTOc4tWJhXFeusxfuVe4HkeNWnvVZSNdetMLmobUdV1m0Pf1AFASBeBgRByFjbB8F_ohyGoehYBYW9-FLT9F2C1d1GbfdP6PSx-3vWM6lcN9d1nUJuuPvrN2G3RfWMU99BeuwXHsNQQzW2Jf2ZADzOTsD5mWRDtn2boMMuSH9TuVaxAEZQKOsJQ6O5ugflOAA3EAA
+	⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts-graph-modularity/2/files/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://registry.npmmirror.com/echarts/5.5.1/files/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  color: ['#37A2FF', '#FF0087', '#FFBF00'],
+  title: {
+    text: '不同年龄段压力情况',
+    left: 'center'
+  },
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'cross',
+      label: {
+        backgroundColor: '#6a7985'
+      }
+    }
+  },
+  legend: {
+    data: ['从不', '偶尔', '经常'],
+    top: '25'
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      boundaryGap: false,
+      data: ['18岁以下', '18-24岁', '25-32岁', '33岁以上']
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: '从不',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+           {
+            offset: 0,
+            color: 'rgb(55, 162, 255)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(116, 21, 219)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [1,2,1,0]
+    },
+    {
+      name: '偶尔',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 0, 135)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(135, 0, 157)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [2,1,2,2]
+    },
+    {
+      name: '经常',
+      type: 'line',
+      stack: 'Total',
+      smooth: true,
+      lineStyle: {
+        width: 0
+      },
+      showSymbol: false,
+      areaStyle: {
+        opacity: 0.8,
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+          {
+            offset: 0,
+            color: 'rgb(255, 191, 0)'
+          },
+          {
+            offset: 1,
+            color: 'rgb(224, 62, 76)'
+          }
+        ])
+      },
+      emphasis: {
+        focus: 'series'
+      },
+      data: [1,3,2,3]
+    }
+  ]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
